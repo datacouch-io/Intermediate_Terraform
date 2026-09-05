@@ -1,0 +1,58 @@
+> length(var.environments)
+  3
+
+> local.owners_raw
+  tolist([
+    " platform@example.com",
+    " sre@example.com ",
+    "data@example.com ",
+  ])
+
+> local.owners
+  [
+    "platform@example.com",
+    "sre@example.com",
+    "data@example.com",
+  ]
+
+> local.owner_domain
+  tolist([
+    "example.com",
+  ])
+
+> local.all_names
+  [
+    "tflab7-dev",
+    "tflab7-prod",
+    "tflab7-staging",
+  ]
+
+> local.env_labels
+  {
+    "dev" = "DEV"
+    "prod" = "PRO"
+    "staging" = "STA"
+  }
+
+> local.env_map
+  {
+    "dev" = {
+      "index" = 0
+      "instance_type" = "t3.micro"
+      "is_production" = false
+      "name" = "tflab7-dev"
+    }
+    "prod" = {
+      "index" = 2
+      "instance_type" = "t3.small"
+      "is_production" = true
+      "name" = "tflab7-prod"
+    }
+    "staging" = {
+      "index" = 1
+      "instance_type" = "t3.micro"
+      "is_production" = false
+      "name" = "tflab7-staging"
+    }
+  }
+

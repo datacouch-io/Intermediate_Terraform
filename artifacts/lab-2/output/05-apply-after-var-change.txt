@@ -1,0 +1,26 @@
+aws_instance.app: Still modifying... [id=i-0524a0ee6a74f4121, 00m10s elapsed]
+aws_instance.app: Still modifying... [id=i-0524a0ee6a74f4121, 00m20s elapsed]
+aws_instance.app: Still modifying... [id=i-0524a0ee6a74f4121, 00m30s elapsed]
+aws_instance.app: Modifications complete after 31s [id=i-0524a0ee6a74f4121]
+null_resource.record_deployment: Creating...
+null_resource.record_deployment: Provisioning with 'local-exec'...
+null_resource.record_deployment (local-exec): Executing: ["/bin/sh" "-c" "printf '%s\\n' \\\n  \"deployed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)\" \\\n  \"name=tflab-dev-app\" \\\n  \"instance_id=i-0524a0ee6a74f4121\" \\\n  \"public_ip=3.94.195.189\" \\\n  \"instance_type=t3.small\" \\\n  \"ami=ami-025b6f0b1ac2ef9f7\" \\\n  > deployment.txt\n"]
+null_resource.record_deployment: Creation complete after 0s [id=6631334042495409418]
+
+Apply complete! Resources: 1 added, 1 changed, 1 destroyed.
+
+Outputs:
+
+deployed_into = "us-east-1"
+instance = {
+  "id" = "i-0524a0ee6a74f4121"
+  "instance_type" = "t3.small"
+  "name_tag" = "tflab-dev-app"
+  "public_ip" = "3.94.195.189"
+}
+name_prefix = "tflab-dev"
+resolved_ami = {
+  "creation_date" = "2026-08-26T15:34:22.000Z"
+  "id" = "ami-025b6f0b1ac2ef9f7"
+  "name" = "al2023-ami-2023.12.20260831.0-kernel-6.1-x86_64"
+}

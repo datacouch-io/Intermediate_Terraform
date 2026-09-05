@@ -1,0 +1,8 @@
+PASS  state holds exactly 1 resource
+PASS  the managed resource is aws_instance.lab
+PASS  AWS reports the instance running
+PASS  Name tag round-tripped to AWS
+PASS  public IP is a routable IPv4 (54.145.168.39)
+PASS  no drift: plan reports zero changes
+
+Lab 1 validation: ALL CHECKS PASSED

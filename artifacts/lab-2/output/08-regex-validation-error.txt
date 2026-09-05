@@ -1,0 +1,6 @@
+Error: Invalid value for variable
+
+  on variables.tf line 7:
+   7: variable "project_name" {
+    ├────────────────
+    │ var.project_name is "My_Project"

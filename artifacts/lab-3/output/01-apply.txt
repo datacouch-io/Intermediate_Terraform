@@ -1,0 +1,6 @@
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+managed_instance_id = "i-06840147e4adbe314"

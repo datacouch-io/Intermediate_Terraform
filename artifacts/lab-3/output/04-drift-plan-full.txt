@@ -1,0 +1,37 @@
+data.aws_ami.al2023: Reading...
+data.aws_ami.al2023: Read complete after 2s [id=ami-025b6f0b1ac2ef9f7]
+aws_instance.managed: Refreshing state... [id=i-06840147e4adbe314]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_instance.managed will be updated in-place
+  ~ resource "aws_instance" "managed" {
+        id                                   = "i-06840147e4adbe314"
+      ~ monitoring                           = true -> false
+      ~ tags                                 = {
+          - "CostCentre" = "finance-42" -> null
+            "Course"     = "intermediate-terraform"
+            "Lab"        = "3"
+            "ManagedBy"  = "terraform"
+          ~ "Name"       = "renamed-by-hand" -> "tf-lab3-managed"
+        }
+      ~ tags_all                             = {
+          - "CostCentre" = "finance-42" -> null
+          ~ "Name"       = "renamed-by-hand" -> "tf-lab3-managed"
+            # (3 unchanged elements hidden)
+        }
+        # (38 unchanged attributes hidden)
+
+        # (9 unchanged blocks hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

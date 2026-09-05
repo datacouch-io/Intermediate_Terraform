@@ -1,0 +1,9 @@
+PASS  state tracks 3 objects (data + instance + imported sg)
+PASS  imported SG is at aws_security_group.imported
+PASS  Name tag reverted to the configured value
+PASS  detailed monitoring reverted to disabled
+PASS  untracked CostCentre tag was removed by apply
+PASS  state holds the real SG id
+FAIL  import was PARTIAL: plan wants to alter the imported resource
+
+Lab 3 validation: FAILURES ABOVE

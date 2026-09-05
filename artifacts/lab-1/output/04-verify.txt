@@ -1,0 +1,28 @@
+=== terraform state list ===
+aws_instance.lab
+
+=== terraform show (abridged) ===
+    ami                                  = "ami-081b0a6eac00b4f53"
+    arn                                  = "arn:aws:ec2:us-east-1:<ACCOUNT_ID>:instance/i-063bf80b54cbdd3d7"
+    availability_zone                    = "us-east-1d"
+    id                                   = "i-063bf80b54cbdd3d7"
+    instance_state                       = "running"
+    instance_type                        = "t3.micro"
+    private_ip                           = "172.31.18.61"
+    public_ip                            = "52.23.237.145"
+
+=== terraform output ===
+instance_id = "i-063bf80b54cbdd3d7"
+instance_public_ip = "52.23.237.145"
+
+=== AWS CLI cross-check (proves it exists outside Terraform) ===
+----------------------------------------
+|           DescribeInstances          |
++-----------+--------------------------+
+|  AZ       |  us-east-1d              |
+|  ID       |  i-063bf80b54cbdd3d7     |
+|  Name     |  tf-lab1-first-instance  |
+|  PublicIP |  52.23.237.145           |
+|  State    |  running                 |
+|  Type     |  t3.micro                |
++-----------+--------------------------+

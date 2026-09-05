@@ -1,0 +1,18 @@
+=== the fleet scaled 3 -> 5 from ONE variable change ===
+-------------------------------------------------------
+|                  DescribeInstances                  |
++-------------+------------+------------------+-------+
+|     AZ      | FleetSize  |      Name        | Node  |
++-------------+------------+------------------+-------+
+|  us-east-1d |  5         |  tflab8-node-01  |  1    |
+|  us-east-1d |  5         |  tflab8-node-02  |  2    |
+|  us-east-1d |  5         |  tflab8-node-03  |  3    |
+|  us-east-1d |  5         |  tflab8-node-04  |  4    |
+|  us-east-1d |  5         |  tflab8-node-05  |  5    |
++-------------+------------+------------------+-------+
+=== state now tracks ===
+aws_instance.fleet[0]
+aws_instance.fleet[1]
+aws_instance.fleet[2]
+aws_instance.fleet[3]
+aws_instance.fleet[4]

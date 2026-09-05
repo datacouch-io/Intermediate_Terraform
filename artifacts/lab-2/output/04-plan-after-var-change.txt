@@ -1,0 +1,14 @@
+  ~ update in-place
+  # aws_instance.app will be updated in-place
+  ~ resource "aws_instance" "app" {
+      ~ instance_type                        = "t3.micro" -> "t3.small"
+      ~ public_dns                           = "ec2-3-80-46-96.compute-1.amazonaws.com" -> (known after apply)
+      ~ public_ip                            = "3.80.46.96" -> (known after apply)
+  # null_resource.record_deployment must be replaced
+      ~ id       = "8243200869286460042" -> (known after apply)
+      ~ triggers = { # forces replacement
+          ~ "public_ip"   = "3.80.46.96" -> (known after apply)
+Plan: 1 to add, 1 to change, 1 to destroy.
+  ~ instance      = {
+      ~ instance_type = "t3.micro" -> "t3.small"
+      ~ public_ip     = "3.80.46.96" -> (known after apply)

@@ -1,0 +1,22 @@
+# Rename to backend.tf and replace <YOUR_BUCKET> with the bucket name the
+# bootstrap printed:
+#
+#   cd ../bootstrap && terraform output -raw bucket_name
+#
+# Or generate this file directly:
+#
+#   BUCKET=$(cd ../bootstrap && terraform output -raw bucket_name)
+#   sed "s/<YOUR_BUCKET>/$BUCKET/" backend.tf.example > backend.tf
+
+terraform {
+  backend "s3" {
+    bucket = "<YOUR_BUCKET>"
+    key    = "lab8/fleet/terraform.tfstate"
+    region = "us-east-1"
+
+    encrypt = true
+    # Terraform 1.10+ native S3 locking. Replaces dynamodb_table, which is
+    # deprecated in 1.15 -- see this lab's Step 4.
+    use_lockfile = true
+  }
+}

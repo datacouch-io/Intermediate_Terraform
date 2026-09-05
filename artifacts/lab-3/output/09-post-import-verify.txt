@@ -1,0 +1,13 @@
+=== state list — the orphan is now managed ===
+data.aws_ami.al2023
+aws_instance.managed
+aws_security_group.imported
+
+=== plan after import: the proof it was imported CORRECTLY ===
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+
+=== detailed exit code (0 = config matches reality) ===
+exit: 0

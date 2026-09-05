@@ -1,0 +1,17 @@
+PASS  dev and prod workspaces both exist
+PASS  each workspace has an isolated state file
+PASS  [dev] instance_count from the workspace map
+PASS  [dev] instance_type from the workspace map
+PASS  [dev] VPC CIDR from the workspace map
+PASS  [dev] HTTP 200 from http://52.54.184.11
+PASS  [dev] page reports its own environment
+PASS  [prod] instance_count from the workspace map
+PASS  [prod] instance_type from the workspace map
+PASS  [prod] VPC CIDR from the workspace map
+PASS  [prod] HTTP 200 from http://54.147.98.196
+PASS  [prod] page reports its own environment
+PASS  [prod] HTTP 200 from http://52.91.232.252
+PASS  [prod] page reports its own environment
+PASS  dev and prod share ZERO instances
+
+Lab 5 validation: ALL CHECKS PASSED

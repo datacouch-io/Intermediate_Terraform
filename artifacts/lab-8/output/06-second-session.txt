@@ -1,0 +1,16 @@
+=== terraform init in a directory that has never seen this infrastructure ===
+Initializing the backend...
+Successfully configured the backend "s3"! Terraform will automatically
+Terraform has been successfully initialized!
+
+=== terraform state list -- from a machine that never ran the apply ===
+data.aws_ami.al2023
+aws_instance.fleet[0]
+aws_instance.fleet[1]
+aws_instance.fleet[2]
+
+=== terraform plan ===
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+Releasing state lock. This may take a few moments...

@@ -1,0 +1,12 @@
+
+Changes to Outputs:
+  + app_id     = (known after apply)
+aws_instance.app: Creating...
+aws_instance.app: Still creating... [00m10s elapsed]
+aws_instance.app: Creation complete after 17s [id=i-024337bacac82e17e]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+app_id = "i-024337bacac82e17e"

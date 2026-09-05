@@ -1,0 +1,5 @@
+aws_instance.app: Still destroying... [id=i-0524a0ee6a74f4121, 00m20s elapsed]
+aws_instance.app: Still destroying... [id=i-0524a0ee6a74f4121, 00m30s elapsed]
+aws_instance.app: Destruction complete after 32s
+
+Destroy complete! Resources: 2 destroyed.

@@ -1,0 +1,37 @@
+#!/bin/bash
+set -euxo pipefail
+
+dnf install -y nginx
+
+# Instance metadata service v2 requires a token — IMDSv1 is disabled by default
+# on new AL2023 AMIs, so a bare curl to 169.254.169.254 returns 401.
+TOKEN=$(curl -sX PUT "http://169.254.169.254/latest/api/token" \
+  -H "X-aws-ec2-metadata-token-ttl-seconds: 300")
+meta() {
+  curl -s -H "X-aws-ec2-metadata-token: $TOKEN" \
+    "http://169.254.169.254/latest/meta-data/$1"
+}
+
+cat > /usr/share/nginx/html/index.html << HTML
+<!doctype html>
+<title>${project_name} — built with Terraform</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; }
+  h1 { color: #2b5fa8; }
+  dt { font-weight: 600; margin-top: .75rem; }
+  dd { margin: 0; font-family: ui-monospace, Menlo, monospace; }
+  .ok { color: #1e7a45; font-weight: 600; }
+</style>
+<h1>${project_name}</h1>
+<p class="ok">This page is served from infrastructure Terraform built.</p>
+<dl>
+  <dt>Instance ID</dt><dd>$(meta instance-id)</dd>
+  <dt>Availability zone</dt><dd>$(meta placement/availability-zone)</dd>
+  <dt>Private IP</dt><dd>$(meta local-ipv4)</dd>
+  <dt>Public IP</dt><dd>$(meta public-ipv4)</dd>
+  <dt>Region</dt><dd>${region}</dd>
+  <dt>Built at</dt><dd>$(date -u +%Y-%m-%dT%H:%M:%SZ)</dd>
+</dl>
+HTML
+
+systemctl enable --now nginx

@@ -1,0 +1,5 @@
+  # aws_instance.env["dev"] will be updated in-place
+  # aws_instance.env["prod"] will be updated in-place
+  # aws_instance.env["qa"] will be created
+  # aws_instance.env["staging"] will be destroyed
+Plan: 1 to add, 2 to change, 1 to destroy.

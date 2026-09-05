@@ -1,0 +1,29 @@
+#!/bin/bash
+set -euxo pipefail
+dnf install -y nginx
+
+TOKEN=$(curl -sX PUT "http://169.254.169.254/latest/api/token" \
+  -H "X-aws-ec2-metadata-token-ttl-seconds: 300")
+meta() { curl -s -H "X-aws-ec2-metadata-token: $TOKEN" "http://169.254.169.254/latest/meta-data/$1"; }
+
+cat > /usr/share/nginx/html/index.html << HTML
+<!doctype html>
+<title>${name} — ${environment}</title>
+<style>
+ body{font-family:system-ui,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1rem}
+ h1{color:#2b5fa8} .env{display:inline-block;padding:.2rem .6rem;border-radius:.3rem;
+ background:#e8f0fb;color:#2b5fa8;font-weight:600} dt{font-weight:600;margin-top:.6rem}
+ dd{margin:0;font-family:ui-monospace,Menlo,monospace}
+</style>
+<h1>${name}</h1>
+<p><span class="env">${environment}</span> &nbsp; server ${index} of ${total}</p>
+<dl>
+ <dt>Instance ID</dt><dd>$(meta instance-id)</dd>
+ <dt>Instance type</dt><dd>$(meta instance-type)</dd>
+ <dt>Availability zone</dt><dd>$(meta placement/availability-zone)</dd>
+ <dt>Private IP</dt><dd>$(meta local-ipv4)</dd>
+ <dt>Built at</dt><dd>$(date -u +%Y-%m-%dT%H:%M:%SZ)</dd>
+</dl>
+HTML
+
+systemctl enable --now nginx

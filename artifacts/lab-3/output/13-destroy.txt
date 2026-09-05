@@ -1,0 +1,6 @@
+aws_security_group.imported: Destruction complete after 2s
+aws_instance.managed: Still destroying... [id=i-06840147e4adbe314, 00m10s elapsed]
+aws_instance.managed: Still destroying... [id=i-06840147e4adbe314, 00m20s elapsed]
+aws_instance.managed: Destruction complete after 21s
+
+Destroy complete! Resources: 2 destroyed.

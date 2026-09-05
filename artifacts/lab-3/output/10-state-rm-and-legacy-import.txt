@@ -1,0 +1,20 @@
+=== terraform state rm — stop managing WITHOUT destroying ===
+Removed aws_security_group.imported
+Successfully removed 1 resource instance(s).
+
+=== is the SG still alive in AWS? ===
+sg-0ab343605a031e76c	tf-lab3-orphan-sg
+
+=== re-adopt it with the LEGACY command form ===
+(the import block is still in import.tf, so remove it first to avoid a duplicate import)
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+
+
+=== state list ===
+data.aws_ami.al2023
+aws_instance.managed
+aws_security_group.imported

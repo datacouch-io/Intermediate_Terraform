@@ -1,0 +1,4 @@
+  # aws_route_table.public will be updated in-place
+              + cidr_block                 = "0.0.0.0/0"
+              + gateway_id                 = "igw-03cf90ccac99d96de"
+Plan: 0 to add, 1 to change, 0 to destroy.

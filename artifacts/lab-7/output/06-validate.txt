@@ -1,0 +1,12 @@
+PASS  one instance per element of var.environments
+PASS  [dev] Name tag == join("-", [project, env])
+PASS  [staging] Name tag == join("-", [project, env])
+PASS  [prod] Name tag == join("-", [project, env])
+PASS  prod got t3.small from size_map
+PASS  dev fell back to the lookup() default
+PASS  trimspace() removed all whitespace from the owner list
+PASS  EnvCount tag equals length(var.environments)
+PASS  no env name is hardcoded outside variables.tf
+PASS  resources are keyed by name, not by numeric index
+
+Lab 7 validation: ALL CHECKS PASSED

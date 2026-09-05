@@ -1,0 +1,22 @@
+=== every tag AWS holds, none of which was typed by hand ===
+---------------------------------------------------------
+|                   DescribeInstances                   |
++-----+--------+------------------+--------+------------+
+| Idx | Label  |      Name        | Prod   |   Type     |
++-----+--------+------------------+--------+------------+
+|  0  |  DEV   |  tflab7-dev      |  false |  t3.micro  |
+|  2  |  PRO   |  tflab7-prod     |  true  |  t3.small  |
+|  1  |  STA   |  tflab7-staging  |  false |  t3.micro  |
++-----+--------+------------------+--------+------------+
+=== the computed tags shared by all three ===
+---------------------------------------------------------------------------
+|                            DescribeInstances                            |
++--------------+----------------------------------------------------------+
+|      Key     |                          Value                           |
++--------------+----------------------------------------------------------+
+|  NameFormula |  join("-", [project, env])                               |
+|  AllEnvs     |  dev,staging,prod                                        |
+|  Owners      |  platform@example.com;sre@example.com;data@example.com   |
+|  EnvCount    |  3                                                       |
+|  OwnerDomains|  example.com                                             |
++--------------+----------------------------------------------------------+

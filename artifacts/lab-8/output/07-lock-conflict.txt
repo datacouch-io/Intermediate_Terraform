@@ -1,0 +1,18 @@
+StatusCode: 412, RequestID: 9D41EMTK875VTB7Y, HostID:
+nd8VyX9JYRZ5nR8E4pqgjenbGJ7grIyT0Tpcv25zlpQueesOm0q0bBtAVETLjqEspJ16VnqgVZM1E6rPQRkk7CBebiMu9CAp,
+api error PreconditionFailed: At least one of the pre-conditions you
+specified did not hold
+Lock Info:
+  ID:        f236c896-9c06-dac6-9585-6af449a95409
+  Path:      tflab8-tfstate-72e17aa0/lab8/fleet/terraform.tfstate
+  Operation: OperationTypeApply
+  Who:       <USER>@<HOSTNAME>
+  Version:   1.15.7
+  Created:   2026-09-05 14:57:04.386809 +0000 UTC
+  Info:      
+
+
+Terraform acquires a state lock to protect the state from being written
+by multiple users at the same time. Please resolve the issue above and try
+again. For most commands, you can disable locking with the "-lock=false"
+flag, but this is not recommended.

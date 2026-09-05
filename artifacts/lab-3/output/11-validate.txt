@@ -1,0 +1,9 @@
+PASS  state tracks 3 objects (data + instance + imported sg)
+PASS  imported SG is at aws_security_group.imported
+PASS  Name tag reverted to the configured value
+PASS  detailed monitoring reverted to disabled
+PASS  untracked CostCentre tag was removed by apply
+PASS  state holds the real SG id
+PASS  import was COMPLETE: plan proposes no changes
+
+Lab 3 validation: ALL CHECKS PASSED

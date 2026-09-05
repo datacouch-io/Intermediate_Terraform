@@ -1,0 +1,29 @@
+=== workspaces before ===
+* default
+
+
+=== does the default workspace work? (it has no settings entry) ===
+Error: Attempt to get attribute from null value
+
+  on main.tf line 49, in module "vpc":
+  49:   cidr = local.env.vpc_cidr
+    ├────────────────
+    │ local.env is null
+
+This value is null, so it does not have any attributes.
+
+Error: Attempt to get attribute from null value
+
+  on main.tf line 52, in module "vpc":
+
+=== create the two we support ===
+so if you run "terraform plan" Terraform will not see any existing state
+for this configuration.
+so if you run "terraform plan" Terraform will not see any existing state
+for this configuration.
+
+=== workspaces after ===
+  default
+  dev
+* prod
+

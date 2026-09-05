@@ -1,0 +1,10 @@
+PASS  terraform validate succeeds
+PASS  terraform fmt reports no changes needed
+PASS  app instance is running
+PASS  no hardcoded ami- literal remains in any .tf file
+PASS  running AMI matches what the data source resolves now
+PASS  plan succeeds with the conditional resource DISABLED
+PASS  plan succeeds with the conditional resource ENABLED
+PASS  plan emits no errors (validate passing is not enough)
+
+Lab 6 validation: ALL CHECKS PASSED

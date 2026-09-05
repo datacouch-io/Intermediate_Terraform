@@ -1,0 +1,6 @@
+Error: creating EC2 Instance: operation error EC2: RunInstances, https response error StatusCode: 400, RequestID: 023c75e2-cbc6-4b8e-b550-7d4983b26c16, api error InvalidAMIID.NotFound: The image id '[ami-0bea529386a62a2ad]' does not exist
+
+  with aws_instance.app,
+  on main.tf line 11, in resource "aws_instance" "app":
+  11: resource "aws_instance" "app" {
+

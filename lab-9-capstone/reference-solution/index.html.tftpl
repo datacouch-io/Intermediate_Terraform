@@ -1,0 +1,15 @@
+<!doctype html>
+<title>${title}</title>
+<style>
+ body{font-family:system-ui,sans-serif;max-width:38rem;margin:4rem auto;padding:0 1rem;line-height:1.5}
+ h1{color:#2b5fa8} .ok{color:#1e7a45;font-weight:600}
+ dt{font-weight:600;margin-top:.6rem} dd{margin:0;font-family:ui-monospace,Menlo,monospace}
+</style>
+<h1>${title}</h1>
+<p class="ok">This page is served by an S3 static website endpoint — no EC2 instance, no web server.</p>
+<dl>
+  <dt>Bucket</dt><dd>${bucket_name}</dd>
+  <dt>Region</dt><dd>${region}</dd>
+  <dt>Served by</dt><dd>Amazon S3 website hosting</dd>
+</dl>
+<p><a href="/does-not-exist.html">Try a missing page</a> to see the custom error document.</p>

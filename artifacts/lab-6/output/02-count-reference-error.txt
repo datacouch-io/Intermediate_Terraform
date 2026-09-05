@@ -1,0 +1,11 @@
+
+Error: Missing resource instance key
+
+  on outputs.tf line 8, in output "bastion_ip":
+   8:   value = aws_instance.bastion.public_ip
+
+Because aws_instance.bastion has "count" set, its attributes must be accessed
+on specific instances.
+
+For example, to correlate with indices of a referring resource, use:
+    aws_instance.bastion[count.index]

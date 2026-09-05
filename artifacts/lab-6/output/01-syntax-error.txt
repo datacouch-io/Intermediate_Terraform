@@ -1,0 +1,15 @@
+
+Error: Terraform encountered problems during initialisation, including problems
+with the configuration, described below.
+
+The Terraform configuration must be valid before initialization so that
+Terraform can determine which modules and providers need to be installed.
+
+
+Error: Unclosed configuration block
+
+  on main.tf line 11, in resource "aws_instance" "app":
+  11: resource "aws_instance" "app" {
+
+There is no closing brace for this block before the end of the file. This may
+be caused by incorrect brace nesting elsewhere in this file.

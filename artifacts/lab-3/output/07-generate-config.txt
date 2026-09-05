@@ -1,0 +1,20 @@
+        region      = "us-east-1"
+        tags        = {
+            "Course" = "intermediate-terraform"
+            "Lab"    = "3"
+            "Name"   = "tf-lab3-orphan-sg"
+        }
+        tags_all    = {
+            "Course" = "intermediate-terraform"
+            "Lab"    = "3"
+            "Name"   = "tf-lab3-orphan-sg"
+        }
+        vpc_id      = "vpc-f4620c89"
+    }
+
+Plan: 1 to import, 0 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

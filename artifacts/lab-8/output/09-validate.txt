@@ -1,0 +1,11 @@
+PASS  state holds fleet_size instances
+PASS  AWS reports 5 running fleet instances
+PASS  format() produced zero-padded names
+PASS  state object exists in S3
+PASS  S3 state object is encrypted
+PASS  bucket versioning is enabled
+PASS  bucket blocks all public access
+PASS  local state file holds ZERO resources after migration
+PASS  remote state in S3 holds 2 resource blocks
+
+Lab 8 validation: ALL CHECKS PASSED

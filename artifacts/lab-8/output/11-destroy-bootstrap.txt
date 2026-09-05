@@ -1,0 +1,4 @@
+random_id.suffix: Destruction complete after 0s
+aws_dynamodb_table.locks: Destruction complete after 9s
+
+Destroy complete! Resources: 6 destroyed.

@@ -1,0 +1,6 @@
+Error: creating EC2 Instance: operation error EC2: RunInstances, https response error StatusCode: 400, RequestID: 10eeb532-9924-42e0-80b1-f014d3037271, api error InvalidAMIID.Malformed: Invalid id: "ami-0123456789abcdef0" (expecting "ami-...")
+
+  with aws_instance.app,
+  on main.tf line 11, in resource "aws_instance" "app":
+  11: resource "aws_instance" "app" {
+

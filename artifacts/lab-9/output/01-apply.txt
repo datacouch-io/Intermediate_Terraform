@@ -1,0 +1,184 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.site will be created
+  + resource "aws_s3_bucket" "site" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_namespace            = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_region               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = "us-east-1"
+      + request_payer               = (known after apply)
+      + tags                        = (known after apply)
+      + tags_all                    = (known after apply)
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_policy.site will be created
+  + resource "aws_s3_bucket_policy" "site" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+      + policy = (known after apply)
+      + region = "us-east-1"
+    }
+
+  # aws_s3_bucket_public_access_block.site will be created
+  + resource "aws_s3_bucket_public_access_block" "site" {
+      + block_public_acls       = false
+      + block_public_policy     = false
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = false
+      + region                  = "us-east-1"
+      + restrict_public_buckets = false
+    }
+
+  # aws_s3_bucket_website_configuration.site will be created
+  + resource "aws_s3_bucket_website_configuration" "site" {
+      + bucket           = (known after apply)
+      + id               = (known after apply)
+      + region           = "us-east-1"
+      + routing_rules    = (known after apply)
+      + website_domain   = (known after apply)
+      + website_endpoint = (known after apply)
+
+      + error_document {
+          + key = "error.html"
+        }
+
+      + index_document {
+          + suffix = "index.html"
+        }
+
+      + routing_rule (known after apply)
+    }
+
+  # aws_s3_object.error will be created
+  + resource "aws_s3_object" "error" {
+      + acl                    = (known after apply)
+      + arn                    = (known after apply)
+      + bucket                 = (known after apply)
+      + bucket_key_enabled     = (known after apply)
+      + checksum_crc32         = (known after apply)
+      + checksum_crc32c        = (known after apply)
+      + checksum_crc64nvme     = (known after apply)
+      + checksum_sha1          = (known after apply)
+      + checksum_sha256        = (known after apply)
+      + content                = "<!doctype html><title>404</title><h1>404 — not found</h1><p>Served by the S3 website endpoint.</p>"
+      + content_type           = "text/html"
+      + etag                   = (known after apply)
+      + force_destroy          = false
+      + id                     = (known after apply)
+      + key                    = "error.html"
+      + kms_key_id             = (known after apply)
+      + region                 = "us-east-1"
+      + server_side_encryption = (known after apply)
+      + storage_class          = (known after apply)
+      + tags_all               = {
+          + "Course"    = "intermediate-terraform"
+          + "Lab"       = "9"
+          + "ManagedBy" = "terraform"
+        }
+      + version_id             = (known after apply)
+    }
+
+  # aws_s3_object.index will be created
+  + resource "aws_s3_object" "index" {
+      + acl                    = (known after apply)
+      + arn                    = (known after apply)
+      + bucket                 = (known after apply)
+      + bucket_key_enabled     = (known after apply)
+      + checksum_crc32         = (known after apply)
+      + checksum_crc32c        = (known after apply)
+      + checksum_crc64nvme     = (known after apply)
+      + checksum_sha1          = (known after apply)
+      + checksum_sha256        = (known after apply)
+      + content                = (known after apply)
+      + content_type           = "text/html"
+      + etag                   = (known after apply)
+      + force_destroy          = false
+      + id                     = (known after apply)
+      + key                    = "index.html"
+      + kms_key_id             = (known after apply)
+      + region                 = "us-east-1"
+      + server_side_encryption = (known after apply)
+      + storage_class          = (known after apply)
+      + tags_all               = {
+          + "Course"    = "intermediate-terraform"
+          + "Lab"       = "9"
+          + "ManagedBy" = "terraform"
+        }
+      + version_id             = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 7 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + bucket_name      = (known after apply)
+  + rest_endpoint    = (known after apply)
+  + website_endpoint = (known after apply)
+random_id.suffix: Creating...
+random_id.suffix: Creation complete after 0s [id=5eKVog]
+aws_s3_bucket.site: Creating...
+aws_s3_bucket.site: Creation complete after 7s [id=tflab9-site-e5e295a2]
+aws_s3_bucket_public_access_block.site: Creating...
+aws_s3_bucket_website_configuration.site: Creating...
+aws_s3_object.index: Creating...
+aws_s3_object.error: Creating...
+aws_s3_bucket_public_access_block.site: Creation complete after 1s [id=tflab9-site-e5e295a2]
+aws_s3_bucket_policy.site: Creating...
+aws_s3_object.error: Creation complete after 1s [id=tflab9-site-e5e295a2/error.html]
+aws_s3_object.index: Creation complete after 1s [id=tflab9-site-e5e295a2/index.html]
+aws_s3_bucket_website_configuration.site: Creation complete after 2s [id=tflab9-site-e5e295a2]
+aws_s3_bucket_policy.site: Creation complete after 1s [id=tflab9-site-e5e295a2]
+
+Apply complete! Resources: 7 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+bucket_name = "tflab9-site-e5e295a2"
+rest_endpoint = "https://tflab9-site-e5e295a2.s3.us-east-1.amazonaws.com"
+website_endpoint = "http://tflab9-site-e5e295a2.s3-website-us-east-1.amazonaws.com"

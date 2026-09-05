@@ -1,0 +1,12 @@
+PASS  HTTP 200 at the website root
+PASS  served by AmazonS3
+PASS  Content-Type declares a charset
+PASS  missing page returns 404
+PASS  missing page serves the CUSTOM error document
+PASS  zero EC2 instances in this configuration
+PASS  a bucket policy exists
+PASS  no aws_s3_bucket_acl resource is used
+PASS  REST endpoint root does NOT serve the index (proving these differ)
+PASS  REST endpoint DOES serve an explicit object
+
+Lab 9 validation: ALL CHECKS PASSED

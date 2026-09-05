@@ -1,0 +1,9 @@
+Error: Invalid index
+
+  on outputs.tf line 8, in output "bastion_ip":
+   8:   value = aws_instance.bastion[0].public_ip
+    ├────────────────
+    │ aws_instance.bastion is empty tuple
+
+The given key does not identify an element in this collection value: the
+collection has no elements.

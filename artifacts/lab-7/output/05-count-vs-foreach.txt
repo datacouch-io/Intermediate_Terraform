@@ -1,0 +1,20 @@
+=== state addresses after the first apply (both styles, same 3 environments) ===
+terraform_data.by_count[0]
+terraform_data.by_count[1]
+terraform_data.by_count[2]
+terraform_data.by_foreach["dev"]
+terraform_data.by_foreach["prod"]
+terraform_data.by_foreach["staging"]
+
+=== plan after removing "staging" from the MIDDLE of the list ===
+  # terraform_data.by_count[1] will be updated in-place
+  # terraform_data.by_count[2] will be destroyed
+  # terraform_data.by_foreach["staging"] will be destroyed
+Plan: 0 to add, 1 to change, 2 to destroy.
+
+=== what by_count[1] actually becomes ===
+  # terraform_data.by_count[1] will be updated in-place
+  ~ resource "terraform_data" "by_count" {
+        id     = "4a22c2cb-072d-9dbe-cf5c-7cdf9c469e28"
+      ~ input  = "staging" -> "prod"
+      ~ output = "staging" -> (known after apply)

@@ -1,0 +1,3 @@
+aws_instance.env["prod"]: Destruction complete after 42s
+
+Destroy complete! Resources: 3 destroyed.

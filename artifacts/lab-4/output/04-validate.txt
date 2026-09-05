@@ -1,0 +1,9 @@
+PASS  HTTP 200 from http://34.230.62.70
+PASS  served by nginx
+PASS  instance is in the purpose-built VPC
+PASS  subnet CIDR computed by cidrsubnet()
+PASS  default route points at an internet gateway
+PASS  port 22 is NOT open
+PASS  the page is served BY the managed instance
+
+Lab 4 validation: ALL CHECKS PASSED

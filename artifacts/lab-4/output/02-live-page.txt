@@ -1,0 +1,28 @@
+=== curl -I ===
+HTTP/1.1 200 OK
+Server: nginx/1.30.4
+Date: Sat, 05 Sep 2026 13:47:57 GMT
+Content-Type: text/html
+Content-Length: 732
+Last-Modified: Sat, 05 Sep 2026 13:47:27 GMT
+
+=== curl body ===
+<!doctype html>
+<title>tflab4 — built with Terraform</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; }
+  h1 { color: #2b5fa8; }
+  dt { font-weight: 600; margin-top: .75rem; }
+  dd { margin: 0; font-family: ui-monospace, Menlo, monospace; }
+  .ok { color: #1e7a45; font-weight: 600; }
+</style>
+<h1>tflab4</h1>
+<p class="ok">This page is served from infrastructure Terraform built.</p>
+<dl>
+  <dt>Instance ID</dt><dd>i-0a7d82909624b4483</dd>
+  <dt>Availability zone</dt><dd>us-east-1a</dd>
+  <dt>Private IP</dt><dd>10.20.1.182</dd>
+  <dt>Public IP</dt><dd>34.230.62.70</dd>
+  <dt>Region</dt><dd>us-east-1</dd>
+  <dt>Built at</dt><dd>2026-09-05T13:47:27Z</dd>
+</dl>

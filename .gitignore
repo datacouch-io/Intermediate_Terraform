@@ -1,0 +1,20 @@
+# Terraform working files. None of this belongs in version control.
+.terraform/
+.terraform.tfstate.lock.info
+terraform.tfstate
+terraform.tfstate.*
+terraform.tfstate.d/
+crash.log
+debug.log
+trace.log
+
+# Variable files often hold environment-specific values and sometimes secrets.
+*.tfvars
+!lab-2-variables/terraform.tfvars
+
+# Artifacts produced by the labs themselves.
+deployment.txt
+lab-6-debugging/*/generated.tf
+
+# Lock files ARE committed deliberately - they pin the provider versions each
+# lab was tested against. Do not add .terraform.lock.hcl here.

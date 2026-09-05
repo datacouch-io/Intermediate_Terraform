@@ -1,0 +1,7 @@
+### Simulating a colleague working in the AWS Console ###
+1. adding an untracked tag
+   done
+2. changing a tag Terraform manages
+   done
+3. enabling detailed monitoring (a real attribute, not a tag)
+pending

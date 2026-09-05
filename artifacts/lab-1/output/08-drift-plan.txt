@@ -1,0 +1,15 @@
+  # aws_instance.lab will be updated in-place
+  ~ resource "aws_instance" "lab" {
+        id                                   = "i-09b4c73740225e37c"
+      ~ tags                                 = {
+            "Course" = "intermediate-terraform"
+            "Lab"    = "1"
+            "Name"   = "tf-lab1-first-instance"
+          - "Owner"  = "someone-in-the-console" -> null
+        }
+      ~ tags_all                             = {
+          - "Owner"  = "someone-in-the-console" -> null
+            # (3 unchanged elements hidden)
+        }
+        # (39 unchanged attributes hidden)
+

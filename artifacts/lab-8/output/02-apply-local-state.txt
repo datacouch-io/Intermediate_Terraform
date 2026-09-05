@@ -1,0 +1,364 @@
+data.aws_ami.al2023: Reading...
+data.aws_ami.al2023: Read complete after 2s [id=ami-025b6f0b1ac2ef9f7]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_instance.fleet[0] will be created
+  + resource "aws_instance" "fleet" {
+      + ami                                  = "ami-025b6f0b1ac2ef9f7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + force_destroy                        = false
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_group_id                   = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + region                               = "us-east-1"
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "FleetSize"  = "3"
+          + "Name"       = "tflab8-node-01"
+          + "NodeNumber" = "1"
+        }
+      + tags_all                             = {
+          + "Course"     = "intermediate-terraform"
+          + "FleetSize"  = "3"
+          + "Lab"        = "8"
+          + "ManagedBy"  = "terraform"
+          + "Name"       = "tflab8-node-01"
+          + "NodeNumber" = "1"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = <<-EOT
+            #!/bin/bash
+            set -euxo pipefail
+            dnf install -y nginx
+            TOKEN=$(curl -sX PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 300")
+            meta() { curl -s -H "X-aws-ec2-metadata-token: $TOKEN" "http://169.254.169.254/latest/meta-data/$1"; }
+            cat > /usr/share/nginx/html/index.html << HTML
+            <!doctype html><title>node 1 of 3</title>
+            <style>body{font-family:system-ui,sans-serif;max-width:34rem;margin:4rem auto;padding:0 1rem}
+            h1{color:#2b5fa8}dd{margin:0;font-family:ui-monospace,Menlo,monospace}dt{font-weight:600;margin-top:.6rem}</style>
+            <h1>node 1 of 3</h1>
+            <dl><dt>Instance ID</dt><dd>$(meta instance-id)</dd>
+            <dt>AZ</dt><dd>$(meta placement/availability-zone)</dd>
+            <dt>Private IP</dt><dd>$(meta local-ipv4)</dd></dl>
+            HTML
+            systemctl enable --now nginx
+        EOT
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = true
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + primary_network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+
+      + secondary_network_interface (known after apply)
+    }
+
+  # aws_instance.fleet[1] will be created
+  + resource "aws_instance" "fleet" {
+      + ami                                  = "ami-025b6f0b1ac2ef9f7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + force_destroy                        = false
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_group_id                   = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + region                               = "us-east-1"
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "FleetSize"  = "3"
+          + "Name"       = "tflab8-node-02"
+          + "NodeNumber" = "2"
+        }
+      + tags_all                             = {
+          + "Course"     = "intermediate-terraform"
+          + "FleetSize"  = "3"
+          + "Lab"        = "8"
+          + "ManagedBy"  = "terraform"
+          + "Name"       = "tflab8-node-02"
+          + "NodeNumber" = "2"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = <<-EOT
+            #!/bin/bash
+            set -euxo pipefail
+            dnf install -y nginx
+            TOKEN=$(curl -sX PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 300")
+            meta() { curl -s -H "X-aws-ec2-metadata-token: $TOKEN" "http://169.254.169.254/latest/meta-data/$1"; }
+            cat > /usr/share/nginx/html/index.html << HTML
+            <!doctype html><title>node 2 of 3</title>
+            <style>body{font-family:system-ui,sans-serif;max-width:34rem;margin:4rem auto;padding:0 1rem}
+            h1{color:#2b5fa8}dd{margin:0;font-family:ui-monospace,Menlo,monospace}dt{font-weight:600;margin-top:.6rem}</style>
+            <h1>node 2 of 3</h1>
+            <dl><dt>Instance ID</dt><dd>$(meta instance-id)</dd>
+            <dt>AZ</dt><dd>$(meta placement/availability-zone)</dd>
+            <dt>Private IP</dt><dd>$(meta local-ipv4)</dd></dl>
+            HTML
+            systemctl enable --now nginx
+        EOT
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = true
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + primary_network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+
+      + secondary_network_interface (known after apply)
+    }
+
+  # aws_instance.fleet[2] will be created
+  + resource "aws_instance" "fleet" {
+      + ami                                  = "ami-025b6f0b1ac2ef9f7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + force_destroy                        = false
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_group_id                   = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + region                               = "us-east-1"
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "FleetSize"  = "3"
+          + "Name"       = "tflab8-node-03"
+          + "NodeNumber" = "3"
+        }
+      + tags_all                             = {
+          + "Course"     = "intermediate-terraform"
+          + "FleetSize"  = "3"
+          + "Lab"        = "8"
+          + "ManagedBy"  = "terraform"
+          + "Name"       = "tflab8-node-03"
+          + "NodeNumber" = "3"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = <<-EOT
+            #!/bin/bash
+            set -euxo pipefail
+            dnf install -y nginx
+            TOKEN=$(curl -sX PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 300")
+            meta() { curl -s -H "X-aws-ec2-metadata-token: $TOKEN" "http://169.254.169.254/latest/meta-data/$1"; }
+            cat > /usr/share/nginx/html/index.html << HTML
+            <!doctype html><title>node 3 of 3</title>
+            <style>body{font-family:system-ui,sans-serif;max-width:34rem;margin:4rem auto;padding:0 1rem}
+            h1{color:#2b5fa8}dd{margin:0;font-family:ui-monospace,Menlo,monospace}dt{font-weight:600;margin-top:.6rem}</style>
+            <h1>node 3 of 3</h1>
+            <dl><dt>Instance ID</dt><dd>$(meta instance-id)</dd>
+            <dt>AZ</dt><dd>$(meta placement/availability-zone)</dd>
+            <dt>Private IP</dt><dd>$(meta local-ipv4)</dd></dl>
+            HTML
+            systemctl enable --now nginx
+        EOT
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = true
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + primary_network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+
+      + secondary_network_interface (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + fleet_size   = 3
+  + instance_ids = [
+      + (known after apply),
+      + (known after apply),
+      + (known after apply),
+    ]
+  + node_names   = [
+      + "tflab8-node-01",
+      + "tflab8-node-02",
+      + "tflab8-node-03",
+    ]
+  + urls         = [
+      + (known after apply),
+      + (known after apply),
+      + (known after apply),
+    ]
+aws_instance.fleet[0]: Creating...
+aws_instance.fleet[2]: Creating...
+aws_instance.fleet[1]: Creating...
+aws_instance.fleet[2]: Still creating... [00m10s elapsed]
+aws_instance.fleet[0]: Still creating... [00m10s elapsed]
+aws_instance.fleet[1]: Still creating... [00m10s elapsed]
+aws_instance.fleet[0]: Creation complete after 18s [id=i-0371d174875c797e6]
+aws_instance.fleet[2]: Creation complete after 18s [id=i-001e19979937a6e38]
+aws_instance.fleet[1]: Creation complete after 18s [id=i-0d74a00cc058dccc9]
+
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+fleet_size = 3
+instance_ids = [
+  "i-0371d174875c797e6",
+  "i-0d74a00cc058dccc9",
+  "i-001e19979937a6e38",
+]
+node_names = [
+  "tflab8-node-01",
+  "tflab8-node-02",
+  "tflab8-node-03",
+]
+urls = [
+  "http://54.82.240.0",
+  "http://54.147.14.131",
+  "http://98.81.148.243",
+]

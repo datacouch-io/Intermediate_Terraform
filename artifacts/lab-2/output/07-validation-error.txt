@@ -1,0 +1,10 @@
+Error: Invalid value for variable
+
+  on variables.tf line 18:
+  18: variable "environment" {
+    ├────────────────
+    │ var.environment is "production"
+
+environment must be one of: dev, staging, prod.
+
+This was checked by the validation rule at variables.tf:23,3-13.

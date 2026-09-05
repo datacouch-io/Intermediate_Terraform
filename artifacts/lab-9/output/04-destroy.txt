@@ -1,0 +1,3 @@
+random_id.suffix: Destruction complete after 0s
+
+Destroy complete! Resources: 7 destroyed.

@@ -1,0 +1,25 @@
+=== 1. the WEBSITE endpoint serves index.html at the root ===
+HTTP/1.1 200 OK
+x-amz-id-2: m4rVbM40544Vp91xznxmYmQ5aaGUuzjCphCXisWegrpBgvb4HhSquW/IkYQ/6fcqw/gA9BgyQCm+ue9SEUhIXzHeR17rtQ7S
+x-amz-request-id: 5BM2DEHG17EJ9B81
+Date: Sat, 05 Sep 2026 15:09:00 GMT
+Last-Modified: Sat, 05 Sep 2026 15:08:44 GMT
+
+=== 2. a missing page gets the CUSTOM error document, with a real 404 ===
+HTTP/1.1 404 Not Found
+x-amz-error-code: NoSuchKey
+x-amz-error-message: The specified key does not exist.
+<!doctype html><title>404</title><h1>404 — not found</h1><p>Served by the S3 website endpoint.</p>
+
+=== 3. the REST endpoint is NOT the same thing ===
+root of REST endpoint:
+  HTTP 403
+an object via REST endpoint:
+  HTTP 200
+
+=== 4. page body from the website endpoint ===
+<h1>Deployed from documentation alone</h1>
+<p class="ok">This page is served by an S3 static website endpoint — no EC2 instance, no web server.</p>
+  <dt>Bucket</dt><dd>tflab9-site-e5e295a2</dd>
+  <dt>Region</dt><dd>us-east-1</dd>
+  <dt>Served by</dt><dd>Amazon S3 website hosting</dd>

@@ -1,0 +1,41 @@
+data.aws_ami.al2023: Reading...
+data.aws_ami.al2023: Read complete after 2s [id=ami-025b6f0b1ac2ef9f7]
+aws_instance.managed: Refreshing state... [id=i-06840147e4adbe314]
+
+Note: Objects have changed outside of Terraform
+
+Terraform detected the following changes made outside of Terraform since the
+last "terraform apply" which may have affected this plan:
+
+  # aws_instance.managed has changed
+  ~ resource "aws_instance" "managed" {
+        id                                   = "i-06840147e4adbe314"
+      ~ monitoring                           = false -> true
+      ~ tags                                 = {
+          + "CostCentre" = "finance-42"
+            "Course"     = "intermediate-terraform"
+            "Lab"        = "3"
+            "ManagedBy"  = "terraform"
+          ~ "Name"       = "tf-lab3-managed" -> "renamed-by-hand"
+        }
+      ~ tags_all                             = {
+          + "CostCentre" = "finance-42"
+          ~ "Name"       = "tf-lab3-managed" -> "renamed-by-hand"
+            # (3 unchanged elements hidden)
+        }
+        # (38 unchanged attributes hidden)
+
+        # (9 unchanged blocks hidden)
+    }
+
+
+This is a refresh-only plan, so Terraform will not take any actions to undo
+these. If you were expecting these changes then you can apply this plan to
+record the updated values in the Terraform state without changing any remote
+objects.
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+managed_instance_id = "i-06840147e4adbe314"

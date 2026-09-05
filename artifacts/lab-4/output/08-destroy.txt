@@ -1,0 +1,19 @@
+aws_route_table_association.public: Destroying... [id=rtbassoc-036330a25e47a4e44]
+aws_vpc_security_group_egress_rule.all: Destroying... [id=sgr-00f5cd2cb71ddc849]
+aws_vpc_security_group_ingress_rule.http: Destroying... [id=sgr-0301d403beb0e39a6]
+aws_instance.web: Destroying... [id=i-0a7d82909624b4483]
+aws_vpc_security_group_egress_rule.all: Destruction complete after 2s
+aws_vpc_security_group_ingress_rule.http: Destruction complete after 2s
+aws_route_table_association.public: Destruction complete after 2s
+aws_route_table.public: Destroying... [id=rtb-0f3859f2212bbe440]
+aws_route_table.public: Destruction complete after 2s
+aws_internet_gateway.main: Destroying... [id=igw-03cf90ccac99d96de]
+aws_internet_gateway.main: Destruction complete after 13s
+aws_instance.web: Destruction complete after 23s
+aws_subnet.public: Destroying... [id=subnet-0ecd75a09abc3c93d]
+aws_security_group.web: Destroying... [id=sg-0ed2d330c2df583ef]
+aws_subnet.public: Destruction complete after 2s
+aws_security_group.web: Destruction complete after 2s
+aws_vpc.main: Destroying... [id=vpc-06831c85929304239]
+aws_vpc.main: Destruction complete after 1s
+Destroy complete! Resources: 9 destroyed.

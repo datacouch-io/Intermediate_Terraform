@@ -1,0 +1,12 @@
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+Changes to Outputs:
+  - instance_id        = "i-063bf80b54cbdd3d7" -> null
+  - instance_public_ip = "52.23.237.145" -> null
+aws_instance.lab: Destroying... [id=i-063bf80b54cbdd3d7]
+aws_instance.lab: Still destroying... [id=i-063bf80b54cbdd3d7, 00m10s elapsed]
+aws_instance.lab: Still destroying... [id=i-063bf80b54cbdd3d7, 00m20s elapsed]
+aws_instance.lab: Still destroying... [id=i-063bf80b54cbdd3d7, 00m30s elapsed]
+aws_instance.lab: Destruction complete after 32s
+
+Destroy complete! Resources: 1 destroyed.

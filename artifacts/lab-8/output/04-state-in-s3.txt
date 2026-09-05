@@ -1,0 +1,20 @@
+=== the state file is now IN S3 ===
+2026-09-05 20:24:46   23.9 KiB terraform.tfstate
+
+=== and it is encrypted ===
+{
+    "Encryption": "AES256",
+    "Size": 24506,
+    "Modified": "2026-09-05T14:54:46+00:00"
+}
+
+=== what is left on local disk ===
+0 terraform.tfstate
+24506 terraform.tfstate.backup
+(a backup of the pre-migration local state is kept, deliberately)
+
+=== Terraform still sees the same 3 instances ===
+data.aws_ami.al2023
+aws_instance.fleet[0]
+aws_instance.fleet[1]
+aws_instance.fleet[2]

@@ -1,0 +1,9 @@
+Error: Invalid index
+
+  on main.tf line 23, in locals:
+  23:   env = local.env_settings[terraform.workspace]
+    ├────────────────
+    │ local.env_settings is object with 2 attributes
+    │ terraform.workspace is "default"
+
+The given key does not identify an element in this collection value.

@@ -1,0 +1,11 @@
+PASS  name_prefix is computed from two variables
+PASS  Name tag on the real instance matches the local
+PASS  merge() kept ManagedBy from common_tags
+PASS  instance AMI == data source AMI (nothing hardcoded)
+PASS  local-exec wrote deployment.txt
+PASS  deployment.txt IP is current, not stale
+PASS  deployment.txt instance_type is current, not stale
+FAIL  deployment.txt name is current, not stale (got 'tflab-dev-app', want 'tflab-staging-app')
+PASS  no drift: plan reports zero changes
+
+Lab 2 validation: FAILURES ABOVE

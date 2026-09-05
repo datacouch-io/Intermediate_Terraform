@@ -1,0 +1,8 @@
+aws_instance.bastion[0]: Creation complete after 18s [id=i-0da2afb87947556e2]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+app_id = "i-024337bacac82e17e"
+bastion_ip = "54.167.20.183"

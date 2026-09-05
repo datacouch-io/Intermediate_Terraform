@@ -1,0 +1,41 @@
+=== 1. state list — note the data source is tracked too ===
+data.aws_ami.al2023
+aws_instance.managed
+
+=== 2. state show (first 18 lines) ===
+# aws_instance.managed:
+resource "aws_instance" "managed" {
+    ami                                  = "ami-025b6f0b1ac2ef9f7"
+    arn                                  = "arn:aws:ec2:us-east-1:<ACCOUNT_ID>:instance/i-06840147e4adbe314"
+    associate_public_ip_address          = true
+    availability_zone                    = "us-east-1d"
+    disable_api_stop                     = false
+    disable_api_termination              = false
+    ebs_optimized                        = false
+    force_destroy                        = false
+    get_password_data                    = false
+    hibernation                          = false
+    host_id                              = null
+    iam_instance_profile                 = null
+    id                                   = "i-06840147e4adbe314"
+    instance_initiated_shutdown_behavior = "stop"
+    instance_lifecycle                   = null
+    instance_state                       = "running"
+
+=== 3. querying state as JSON, without parsing text ===
+(skipping data.aws_ami.al2023 - mode=data, Terraform does not own it)
+address      : aws_instance.managed
+type/name    : aws_instance / managed
+real id      : i-06840147e4adbe314
+monitoring   : False
+az           : us-east-1d
+tags         : {'Course': 'intermediate-terraform', 'Lab': '3', 'ManagedBy': 'terraform', 'Name': 'tf-lab3-managed'}
+
+=== 4. state metadata ===
+version          : 4
+terraform_version: 1.15.7
+serial           : 2
+lineage          : 16cae29c-39f9-202a-8c73-c415c697b37c
+resources in file: 2
+  - data     aws_ami.al2023  (44 attributes stored)
+  - managed  aws_instance.managed  (63 attributes stored)

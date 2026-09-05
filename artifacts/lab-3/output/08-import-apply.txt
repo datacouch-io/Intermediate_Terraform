@@ -1,0 +1,25 @@
+        name_prefix = null
+        owner_id    = "<ACCOUNT_ID>"
+        region      = "us-east-1"
+        tags        = {
+            "Course" = "intermediate-terraform"
+            "Lab"    = "3"
+            "Name"   = "tf-lab3-orphan-sg"
+        }
+        tags_all    = {
+            "Course" = "intermediate-terraform"
+            "Lab"    = "3"
+            "Name"   = "tf-lab3-orphan-sg"
+        }
+        vpc_id      = "vpc-f4620c89"
+    }
+
+Plan: 1 to import, 0 to add, 0 to change, 0 to destroy.
+aws_security_group.imported: Importing... [id=sg-0ab343605a031e76c]
+aws_security_group.imported: Import complete [id=sg-0ab343605a031e76c]
+
+Apply complete! Resources: 1 imported, 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+managed_instance_id = "i-06840147e4adbe314"

@@ -1,0 +1,510 @@
+module.web.data.aws_ami.al2023: Reading...
+module.web.data.aws_ami.al2023: Read complete after 2s [id=ami-025b6f0b1ac2ef9f7]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # module.vpc.aws_default_network_acl.this[0] will be created
+  + resource "aws_default_network_acl" "this" {
+      + arn                    = (known after apply)
+      + default_network_acl_id = (known after apply)
+      + id                     = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "us-east-1"
+      + tags                   = {
+          + "Environment" = "dev"
+          + "Name"        = "tflab5-dev-vpc-default"
+        }
+      + tags_all               = {
+          + "Course"      = "intermediate-terraform"
+          + "Environment" = "dev"
+          + "Lab"         = "5"
+          + "ManagedBy"   = "terraform"
+          + "Name"        = "tflab5-dev-vpc-default"
+          + "Workspace"   = "dev"
+        }
+      + vpc_id                 = (known after apply)
+
+      + egress {
+          + action          = "allow"
+          + from_port       = 0
+          + ipv6_cidr_block = "::/0"
+          + protocol        = "-1"
+          + rule_no         = 101
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+      + egress {
+          + action          = "allow"
+          + cidr_block      = "0.0.0.0/0"
+          + from_port       = 0
+          + protocol        = "-1"
+          + rule_no         = 100
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+
+      + ingress {
+          + action          = "allow"
+          + from_port       = 0
+          + ipv6_cidr_block = "::/0"
+          + protocol        = "-1"
+          + rule_no         = 101
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+      + ingress {
+          + action          = "allow"
+          + cidr_block      = "0.0.0.0/0"
+          + from_port       = 0
+          + protocol        = "-1"
+          + rule_no         = 100
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.vpc.aws_default_route_table.default[0] will be created
+  + resource "aws_default_route_table" "default" {
+      + arn                    = (known after apply)
+      + default_route_table_id = (known after apply)
+      + id                     = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "us-east-1"
+      + route                  = (known after apply)
+      + tags                   = {
+          + "Environment" = "dev"
+          + "Name"        = "tflab5-dev-vpc-default"
+        }
+      + tags_all               = {
+          + "Course"      = "intermediate-terraform"
+          + "Environment" = "dev"
+          + "Lab"         = "5"
+          + "ManagedBy"   = "terraform"
+          + "Name"        = "tflab5-dev-vpc-default"
+          + "Workspace"   = "dev"
+        }
+      + vpc_id                 = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+          + update = "5m"
+        }
+    }
+
+  # module.vpc.aws_default_security_group.this[0] will be created
+  + resource "aws_default_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = (known after apply)
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "us-east-1"
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Environment" = "dev"
+          + "Name"        = "tflab5-dev-vpc-default"
+        }
+      + tags_all               = {
+          + "Course"      = "intermediate-terraform"
+          + "Environment" = "dev"
+          + "Lab"         = "5"
+          + "ManagedBy"   = "terraform"
+          + "Name"        = "tflab5-dev-vpc-default"
+          + "Workspace"   = "dev"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.vpc.aws_internet_gateway.this[0] will be created
+  + resource "aws_internet_gateway" "this" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + region   = "us-east-1"
+      + tags     = {
+          + "Environment" = "dev"
+          + "Name"        = "tflab5-dev-vpc"
+        }
+      + tags_all = {
+          + "Course"      = "intermediate-terraform"
+          + "Environment" = "dev"
+          + "Lab"         = "5"
+          + "ManagedBy"   = "terraform"
+          + "Name"        = "tflab5-dev-vpc"
+          + "Workspace"   = "dev"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[0] will be created
+  + resource "aws_route" "public_internet_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + region                 = "us-east-1"
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route_table.public[0] will be created
+  + resource "aws_route_table" "public" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "us-east-1"
+      + route            = (known after apply)
+      + tags             = {
+          + "Environment" = "dev"
+          + "Name"        = "tflab5-dev-vpc-public"
+        }
+      + tags_all         = {
+          + "Course"      = "intermediate-terraform"
+          + "Environment" = "dev"
+          + "Lab"         = "5"
+          + "ManagedBy"   = "terraform"
+          + "Name"        = "tflab5-dev-vpc-public"
+          + "Workspace"   = "dev"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[0] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + region         = "us-east-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[0] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.51.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "us-east-1"
+      + tags                                           = {
+          + "Environment" = "dev"
+          + "Name"        = "tflab5-dev-vpc-public-us-east-1a"
+        }
+      + tags_all                                       = {
+          + "Course"      = "intermediate-terraform"
+          + "Environment" = "dev"
+          + "Lab"         = "5"
+          + "ManagedBy"   = "terraform"
+          + "Name"        = "tflab5-dev-vpc-public-us-east-1a"
+          + "Workspace"   = "dev"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_vpc.this[0] will be created
+  + resource "aws_vpc" "this" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.51.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + region                               = "us-east-1"
+      + tags                                 = {
+          + "Environment" = "dev"
+          + "Name"        = "tflab5-dev-vpc"
+        }
+      + tags_all                             = {
+          + "Course"      = "intermediate-terraform"
+          + "Environment" = "dev"
+          + "Lab"         = "5"
+          + "ManagedBy"   = "terraform"
+          + "Name"        = "tflab5-dev-vpc"
+          + "Workspace"   = "dev"
+        }
+    }
+
+  # module.web.aws_instance.web[0] will be created
+  + resource "aws_instance" "web" {
+      + ami                                  = "ami-025b6f0b1ac2ef9f7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + force_destroy                        = false
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_group_id                   = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + region                               = "us-east-1"
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Environment" = "dev"
+          + "Module"      = "web-server"
+          + "Name"        = "tflab5-dev-web-1"
+          + "Project"     = "tflab5"
+        }
+      + tags_all                             = {
+          + "Course"      = "intermediate-terraform"
+          + "Environment" = "dev"
+          + "Lab"         = "5"
+          + "ManagedBy"   = "terraform"
+          + "Module"      = "web-server"
+          + "Name"        = "tflab5-dev-web-1"
+          + "Project"     = "tflab5"
+          + "Workspace"   = "dev"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = <<-EOT
+            #!/bin/bash
+            set -euxo pipefail
+            dnf install -y nginx
+            
+            TOKEN=$(curl -sX PUT "http://169.254.169.254/latest/api/token" \
+              -H "X-aws-ec2-metadata-token-ttl-seconds: 300")
+            meta() { curl -s -H "X-aws-ec2-metadata-token: $TOKEN" "http://169.254.169.254/latest/meta-data/$1"; }
+            
+            cat > /usr/share/nginx/html/index.html << HTML
+            <!doctype html>
+            <title>tflab5-dev — dev</title>
+            <style>
+             body{font-family:system-ui,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1rem}
+             h1{color:#2b5fa8} .env{display:inline-block;padding:.2rem .6rem;border-radius:.3rem;
+             background:#e8f0fb;color:#2b5fa8;font-weight:600} dt{font-weight:600;margin-top:.6rem}
+             dd{margin:0;font-family:ui-monospace,Menlo,monospace}
+            </style>
+            <h1>tflab5-dev</h1>
+            <p><span class="env">dev</span> &nbsp; server 1 of 1</p>
+            <dl>
+             <dt>Instance ID</dt><dd>$(meta instance-id)</dd>
+             <dt>Instance type</dt><dd>$(meta instance-type)</dd>
+             <dt>Availability zone</dt><dd>$(meta placement/availability-zone)</dd>
+             <dt>Private IP</dt><dd>$(meta local-ipv4)</dd>
+             <dt>Built at</dt><dd>$(date -u +%Y-%m-%dT%H:%M:%SZ)</dd>
+            </dl>
+            HTML
+            
+            systemctl enable --now nginx
+        EOT
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = true
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + primary_network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+
+      + secondary_network_interface (known after apply)
+    }
+
+  # module.web.aws_security_group.web will be created
+  + resource "aws_security_group" "web" {
+      + arn                    = (known after apply)
+      + description            = "HTTP in, all out - managed by the web-server module"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "tflab5-dev-web-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "us-east-1"
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Environment" = "dev"
+          + "Module"      = "web-server"
+          + "Name"        = "tflab5-dev-web-sg"
+          + "Project"     = "tflab5"
+        }
+      + tags_all               = {
+          + "Course"      = "intermediate-terraform"
+          + "Environment" = "dev"
+          + "Lab"         = "5"
+          + "ManagedBy"   = "terraform"
+          + "Module"      = "web-server"
+          + "Name"        = "tflab5-dev-web-sg"
+          + "Project"     = "tflab5"
+          + "Workspace"   = "dev"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.web.aws_vpc_security_group_egress_rule.all will be created
+  + resource "aws_vpc_security_group_egress_rule" "all" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "0.0.0.0/0"
+      + description            = "All outbound"
+      + id                     = (known after apply)
+      + ip_protocol            = "-1"
+      + region                 = "us-east-1"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {
+          + "Course"    = "intermediate-terraform"
+          + "Lab"       = "5"
+          + "ManagedBy" = "terraform"
+          + "Workspace" = "dev"
+        }
+    }
+
+  # module.web.aws_vpc_security_group_ingress_rule.http will be created
+  + resource "aws_vpc_security_group_ingress_rule" "http" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "0.0.0.0/0"
+      + description            = "HTTP"
+      + from_port              = 80
+      + id                     = (known after apply)
+      + ip_protocol            = "tcp"
+      + region                 = "us-east-1"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {
+          + "Course"    = "intermediate-terraform"
+          + "Lab"       = "5"
+          + "ManagedBy" = "terraform"
+          + "Workspace" = "dev"
+        }
+      + to_port                = 80
+    }
+
+Plan: 13 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + instance_ids  = [
+      + (known after apply),
+    ]
+  + settings_used = {
+      + instance_count = 1
+      + instance_type  = "t3.micro"
+      + vpc_cidr       = "10.51.0.0/16"
+    }
+  + urls          = [
+      + (known after apply),
+    ]
+  + vpc_id        = (known after apply)
+  + workspace     = "dev"
+module.vpc.aws_vpc.this[0]: Creating...
+module.vpc.aws_vpc.this[0]: Creation complete after 6s [id=vpc-06a24fe4115c508ee]
+module.vpc.aws_default_route_table.default[0]: Creating...
+module.vpc.aws_internet_gateway.this[0]: Creating...
+module.vpc.aws_subnet.public[0]: Creating...
+module.vpc.aws_default_security_group.this[0]: Creating...
+module.vpc.aws_default_network_acl.this[0]: Creating...
+module.web.aws_security_group.web: Creating...
+module.vpc.aws_route_table.public[0]: Creating...
+module.vpc.aws_default_route_table.default[0]: Creation complete after 1s [id=rtb-0b5967af6b9deb0cb]
+module.vpc.aws_internet_gateway.this[0]: Creation complete after 2s [id=igw-001d0564e1c928faa]
+module.vpc.aws_route_table.public[0]: Creation complete after 2s [id=rtb-04b96cb02b6a12c55]
+module.vpc.aws_route.public_internet_gateway[0]: Creating...
+module.vpc.aws_default_security_group.this[0]: Creation complete after 4s [id=sg-062e19e27dd4db0ea]
+module.vpc.aws_default_network_acl.this[0]: Creation complete after 4s [id=acl-0b658e9b025e78ee3]
+module.vpc.aws_route.public_internet_gateway[0]: Creation complete after 2s [id=r-rtb-04b96cb02b6a12c551080289494]
+module.web.aws_security_group.web: Creation complete after 5s [id=sg-02aaf9c5f0a92090f]
+module.web.aws_vpc_security_group_ingress_rule.http: Creating...
+module.web.aws_vpc_security_group_egress_rule.all: Creating...
+module.web.aws_vpc_security_group_ingress_rule.http: Creation complete after 0s [id=sgr-0700f987d1d25f22a]
+module.web.aws_vpc_security_group_egress_rule.all: Creation complete after 0s [id=sgr-05c062714f46300ae]
+module.vpc.aws_subnet.public[0]: Still creating... [00m10s elapsed]
+module.vpc.aws_subnet.public[0]: Creation complete after 13s [id=subnet-03cb0355a175103c1]
+module.vpc.aws_route_table_association.public[0]: Creating...
+module.web.aws_instance.web[0]: Creating...
+module.vpc.aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-044d3dd9856a2b33d]
+module.web.aws_instance.web[0]: Still creating... [00m10s elapsed]
+module.web.aws_instance.web[0]: Creation complete after 16s [id=i-0838a59d810c6b183]
+
+Apply complete! Resources: 13 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+instance_ids = [
+  "i-0838a59d810c6b183",
+]
+settings_used = {
+  "instance_count" = 1
+  "instance_type" = "t3.micro"
+  "vpc_cidr" = "10.51.0.0/16"
+}
+urls = [
+  "http://52.54.184.11",
+]
+vpc_id = "vpc-06a24fe4115c508ee"
+workspace = "dev"

@@ -1,0 +1,3 @@
+aws_instance.app: Destruction complete after 22s
+
+Destroy complete! Resources: 1 destroyed.

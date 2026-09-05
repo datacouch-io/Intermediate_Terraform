@@ -1,0 +1,3 @@
+  # aws_instance.web must be replaced
+      ~ user_data                            = <<-EOT # forces replacement
+Plan: 1 to add, 0 to change, 1 to destroy.

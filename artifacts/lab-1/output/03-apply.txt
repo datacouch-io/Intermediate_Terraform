@@ -1,0 +1,30 @@
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + primary_network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+
+      + secondary_network_interface (known after apply)
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + instance_id        = (known after apply)
+  + instance_public_ip = (known after apply)
+aws_instance.lab: Creating...
+aws_instance.lab: Still creating... [00m10s elapsed]
+aws_instance.lab: Creation complete after 18s [id=i-063bf80b54cbdd3d7]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+instance_id = "i-063bf80b54cbdd3d7"
+instance_public_ip = "52.23.237.145"

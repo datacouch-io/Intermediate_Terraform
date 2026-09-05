@@ -1,0 +1,7 @@
+=== Creating a security group with the AWS CLI — Terraform knows nothing about this ===
+created: sg-0ab343605a031e76c
+sgr-01c3a08a585c0a89d
+
+=== Terraform's view: it is not in state ===
+data.aws_ami.al2023
+aws_instance.managed

@@ -1,0 +1,28 @@
+=== workspace list ===
+  default
+  dev
+* prod
+
+
+=== where each workspace's state actually lives ===
+terraform.tfstate.d/dev/terraform.tfstate
+terraform.tfstate.d/prod/terraform.tfstate
+
+--- dev : 14 objects in state ---
+   settings: {'instance_count': 1, 'instance_type': 't3.micro', 'vpc_cidr': '10.51.0.0/16'}
+   url: http://52.54.184.11
+--- prod : 15 objects in state ---
+   settings: {'instance_count': 2, 'instance_type': 't3.small', 'vpc_cidr': '10.52.0.0/16'}
+   url: http://54.147.98.196
+   url: http://52.91.232.252
+
+=== AWS view: both environments side by side ===
+-----------------------------------------------------------------------------
+|                             DescribeInstances                             |
++------------+---------------------+--------------+-----------+-------------+
+|     AZ     |        Name         |  PrivateIP   |   Type    |  Workspace  |
++------------+---------------------+--------------+-----------+-------------+
+|  us-east-1a|  tflab5-dev-web-1   |  10.51.1.224 |  t3.micro |  dev        |
+|  us-east-1a|  tflab5-prod-web-1  |  10.52.1.57  |  t3.small |  prod       |
+|  us-east-1a|  tflab5-prod-web-2  |  10.52.1.150 |  t3.small |  prod       |
++------------+---------------------+--------------+-----------+-------------+

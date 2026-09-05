@@ -1,0 +1,18 @@
+=== delete ONLY the default route (instance untouched, SG untouched) ===
+route deleted
+
+instance state : running
+port 80 open   : 1
+curl           : 000TIMEOUT
+
+=== validate.sh with a healthy instance and no route to it ===
+FAIL  HTTP 200 from http://34.230.62.70 (got '000', want '200')
+FAIL  served by nginx (got '', want 'nginx')
+PASS  instance is in the purpose-built VPC
+PASS  subnet CIDR computed by cidrsubnet()
+FAIL  default route points at an internet gateway (got 'None', want 'igw-')
+PASS  port 22 is NOT open
+curl: (28) Connection timed out after 10006 milliseconds
+FAIL  the page is served BY the managed instance (got '', want 'i-0a7d82909624b4483')
+
+Lab 4 validation: FAILURES ABOVE

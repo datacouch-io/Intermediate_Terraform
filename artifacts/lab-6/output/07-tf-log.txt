@@ -1,0 +1,17 @@
+=== TF_LOG=DEBUG produced a log of: ===
+lines: 368
+size: 56K
+
+=== finding the failing API call in it ===
+360:  | <Response><Errors><Error><Code>InvalidAMIID.NotFound</Code><Message>The image id '[ami-0bea529386a62a2ad]' does not exist</Message></Error></Errors><RequestID>be88e717-96ad-4d1d-a170-276f7619f
+362:2026-09-05T19:38:28.475+0530 [DEBUG] provider.terraform-provider-aws_v6.63.0_x5: request failed with unretryable error https response error StatusCode: 400, RequestID: be88e717-96ad-4d1d-a170-276f
+363:2026-09-05T19:38:28.476+0530 [ERROR] provider.terraform-provider-aws_v6.63.0_x5: Response contains error diagnostic: @module=sdk.proto tf_proto_version=5.11 diagnostic_detail="" diagnostic_severit
+
+=== the request Terraform actually sent (trimmed) ===
+185:  |             <usageOperation>RunInstances</usageOperation>
+227:  |             <usageOperation>RunInstances</usageOperation>
+353:2026-09-05T19:38:27.135+0530 [DEBUG] provider.terraform-provider-aws_v6.63.0_x5: HTTP Request Sent: http.request.header.amz_sdk_request="attempt=1; max=25" 
+355:  | Action=RunInstances&ClientToken=terraform-ufVrjirhXkQd7sOCmBM16D9WgL&CreditSpecification.CpuCredits=unlimited&DisableApiTermination=false&EbsOptimized=f
+
+=== log levels available ===
+TRACE (most verbose) > DEBUG > INFO > WARN > ERROR
