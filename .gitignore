@@ -18,3 +18,7 @@ lab-6-debugging/*/generated.tf
 
 # Lock files ARE committed deliberately - they pin the provider versions each
 # lab was tested against. Do not add .terraform.lock.hcl here.
+
+# Word build scratch. Regenerate with ./tools/build_word.sh
+build/ref/
+build/*.md

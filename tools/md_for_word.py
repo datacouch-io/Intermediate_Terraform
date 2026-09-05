@@ -29,9 +29,12 @@ def convert(text):
     text = re.sub(r"<details>\s*<summary>(.*?)</summary>(.*?)</details>",
                   details, text, flags=re.S)
 
-    # Sibling .md links -> .docx
+    # Sibling .md links -> .docx, in both the target AND the visible label,
+    # so a reader is not told to open a file that is not in the Word bundle.
     text = re.sub(r"\((?!http)([0-9A-Za-z._/-]+)\.md(#[^)]*)?\)",
                   lambda m: f"({m.group(1)}.docx)", text)
+    text = re.sub(r"\[`?([0-9A-Za-z._/-]+)\.md`?(\s[^\]]*)?\]\(",
+                  lambda m: f"[`{m.group(1)}.docx`{m.group(2) or ''}](", text)
 
     # Emoji that render inconsistently in Word
     text = text.replace("✅", "YES —").replace("❌", "NO —")
